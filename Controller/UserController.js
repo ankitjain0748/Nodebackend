@@ -1,4 +1,4 @@
-const User = require('../Models/signup');
+const User = require('../Models/SignUp');
 const { successResponse, errorResponse, validationErrorResponse } = require('../helper/responseHelper');
 
 const signup = async (req, res) => {
