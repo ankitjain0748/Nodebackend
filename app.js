@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const apiroute = require('./Routes/ContactUs');
+const userRoutes=require('./Routes/User')
+const { userInfo } = require('os');
 
 const app = express();
 app.use(express.json());
@@ -18,7 +20,7 @@ mongoose.connect('mongodb://localhost:27017/contact', {
 
 // API Routes
 app.use('/api', apiroute);
-
+app.use('/api',userRoutes)
 // Example GET route
 app.get('/', (req, res) => {
   res.json({ message: 'API data response' });
